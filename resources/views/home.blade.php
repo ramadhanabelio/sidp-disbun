@@ -19,7 +19,7 @@
                                         <i class="bi bi-cart"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>145</h6>
+                                        <h6>{{ $totalKabupaten }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@
                                         <i class="bi bi-cart"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>145</h6>
+                                        <h6>{{ $totalKecamatan }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                         <i class="bi bi-currency-dollar"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>3,264</h6>
+                                        <h6>{{ $totalDesa }}</h6>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                         <i class="bi bi-file-pdf"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6>1244</h6>
+                                        <h6></h6>
                                     </div>
                                 </div>
                             </div>

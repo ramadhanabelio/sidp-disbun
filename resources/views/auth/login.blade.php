@@ -48,7 +48,7 @@
                                     <div class="pt-2 pb-2">
                                         <h5 class="card-title text-center pb-0 fs-4">Sistem Informasi Data Perkebunan
                                         </h5>
-                                        <p class="text-center small">DINAS PERKEBUNAN KABUPATEN BENGKALIS</p>
+                                        <p class="text-center text-muted small">DINAS PERKEBUNAN KABUPATEN BENGKALIS</p>
                                     </div>
 
                                     <form action="{{ route('login') }}" method="POST"
