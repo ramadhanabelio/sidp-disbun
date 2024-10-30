@@ -5,6 +5,7 @@ use App\Http\Controllers\DesaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +18,21 @@ use App\Http\Controllers\KecamatanController;
 |
 */
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get('/', function () {
-    return redirect()->route('home');
-});
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::resource('kabupaten', KabupatenController::class);
-Route::get('kabupaten/{kabupaten}/kecamatan/create', [KecamatanController::class, 'create'])->name('kecamatan.create');
-Route::post('kabupaten/{kabupaten}/kecamatan', [KecamatanController::class, 'store'])->name('kecamatan.store');
-Route::get('/kecamatan', [KecamatanController::class, 'index'])->name('kecamatan.index');
-Route::get('kecamatan/{kecamatan}/desa/create', [DesaController::class, 'create'])->name('desa.create');
-Route::post('kecamatan/{kecamatan}/desa', [DesaController::class, 'store'])->name('desa.store');
-Route::get('/desa', [DesaController::class, 'index'])->name('desa.index');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
+    Route::get('/', function () {
+        return redirect()->route('home');
+    });
+
+    Route::resource('kabupaten', KabupatenController::class);
+    Route::get('kabupaten/{kabupaten}/kecamatan/create', [KecamatanController::class, 'create'])->name('kecamatan.create');
+    Route::post('kabupaten/{kabupaten}/kecamatan', [KecamatanController::class, 'store'])->name('kecamatan.store');
+    Route::get('/kecamatan', [KecamatanController::class, 'index'])->name('kecamatan.index');
+    Route::get('kecamatan/{kecamatan}/desa/create', [DesaController::class, 'create'])->name('desa.create');
+    Route::post('kecamatan/{kecamatan}/desa', [DesaController::class, 'store'])->name('desa.store');
+    Route::get('/desa', [DesaController::class, 'index'])->name('desa.index');
+});

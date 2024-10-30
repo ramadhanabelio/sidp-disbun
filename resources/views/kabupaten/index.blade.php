@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Daftar Kabupaten')
+
 @section('content')
     <h1>Daftar Kabupaten</h1>
     <a href="{{ route('kabupaten.create') }}">Tambah Kabupaten</a>

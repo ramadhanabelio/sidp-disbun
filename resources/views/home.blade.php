@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        {{-- <h1>Welcome to the Dashboard</h1>
-        <p>This is the main page where you can access all parts of the system.</p> --}}
+        <h1>Welcome to the Dashboard</h1>
+        <p>This is the main page where you can access all parts of the system.</p>
     </div>
 @endsection
