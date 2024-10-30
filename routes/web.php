@@ -24,9 +24,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
-    Route::get('/', function () {
-        return redirect()->route('home');
-    });
 
     Route::resource('kabupaten', KabupatenController::class);
     Route::get('kabupaten/{kabupaten}/kecamatan/create', [KecamatanController::class, 'create'])->name('kecamatan.create');
