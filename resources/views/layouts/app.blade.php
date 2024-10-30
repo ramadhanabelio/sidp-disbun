@@ -76,8 +76,16 @@
     <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('home') }}">
-                    <i class="bi bi-grid"></i><span>Dashboard</span>
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-book"></i>
+                    <span>Rekap Data</span>
                 </a>
             </li>
 
@@ -109,17 +117,9 @@
             </nav>
         </div>
 
-        <section class="section dashboard">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-body">
-                            @yield('content')
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+        @yield('content')
+
     </main>
 
     <!-- Footer -->
