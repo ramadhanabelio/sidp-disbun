@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kabupaten;
 use App\Models\Kecamatan;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class KecamatanController extends Controller
 {
