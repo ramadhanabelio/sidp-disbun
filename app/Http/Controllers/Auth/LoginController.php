@@ -17,17 +17,23 @@ class LoginController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/dashboard');
+            $user = Auth::user();
+
+            if ($user->status === 'super_admin') {
+                return redirect()->intended('/dashboard');
+            } elseif ($user->status === 'admin') {
+                return redirect()->intended('/admin/dashboard');
+            }
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.'
+            'email' => 'The provided credentials do not match our records.',
         ]);
     }
 

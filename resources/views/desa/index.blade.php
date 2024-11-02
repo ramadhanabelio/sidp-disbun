@@ -15,6 +15,12 @@
                             </div>
                         @endif
 
+                        @if (session('error'))
+                            <div class="alert alert-danger mt-4">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+
                         <div class="container mt-4">
                             <table class="table datatable">
                                 <thead>
@@ -42,6 +48,13 @@
                                                     <button type="submit" class="badge bg-danger border-0"
                                                         onclick="return confirm('Yakin ingin menghapus desa ini?')">
                                                         <i class="bi bi-trash me-1"></i> Hapus
+                                                    </button>
+                                                </form>
+                                                <form action="{{ route('desa.create-user', $desa->id) }}" method="POST"
+                                                    style="display:inline;">
+                                                    @csrf
+                                                    <button type="submit" class="badge bg-success border-0">
+                                                        <i class="bi bi-person-fill-add"></i> Buat Akun Desa
                                                     </button>
                                                 </form>
                                             </td>

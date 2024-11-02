@@ -18,4 +18,9 @@ class HomeController extends Controller
 
         return view('home', compact('totalKabupaten', 'totalKecamatan', 'totalDesa'));
     }
+
+    public function adminHome()
+    {
+        return view('admin.home');
+    }
 }

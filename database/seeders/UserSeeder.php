@@ -17,7 +17,8 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Admin DISBUN Bengkalis',
             'email' => 'admin@disbun.bengkaliskab.go.id',
-            'password' => Hash::make('admin-disbun-1234')
+            'password' => Hash::make('admin-disbun-1234'),
+            'status' => 'super_admin'
         ]);
     }
 }

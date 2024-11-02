@@ -26,14 +26,16 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Protected Routes
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
+    Route::get('/admin/dashboard', [HomeController::class, 'adminHome'])->name('admin.home');
 
     // Kabupaten Routes
     Route::resource('kabupaten', KabupatenController::class);
 
     // Kecamatan Routes
     Route::resource('kecamatan', KecamatanController::class);
+    Route::post('kecamatan/{kecamatan}/desa', [DesaController::class, 'store'])->name('desa.store');
 
     // Desa Routes
     Route::resource('desa', DesaController::class);
-    Route::post('kecamatan/{kecamatan}/desa', [DesaController::class, 'store'])->name('desa.store');
+    Route::post('desa/{desa}/create-user', [DesaController::class, 'createUserAccount'])->name('desa.create-user');
 });
