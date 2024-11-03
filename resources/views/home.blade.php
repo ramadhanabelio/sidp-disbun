@@ -91,12 +91,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-body">
-                        <div class="container mt-4">
-                            {{-- <h1>Welcome to the Dashboard</h1>
+                    {{-- <div class="card-body">
+                        <div class="container mt-4"> --}}
+                    {{-- <h1>Welcome to the Dashboard</h1>
                             <p>This is the main page where you can access all parts of the system.</p> --}}
-                        </div>
-                    </div>
+                    {{-- </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
