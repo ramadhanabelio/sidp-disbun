@@ -8,7 +8,6 @@ use App\Models\Kecamatan;
 use App\Models\PemilikKebun;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
 class PemilikKebunController extends Controller
 {

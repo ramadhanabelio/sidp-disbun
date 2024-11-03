@@ -37,10 +37,10 @@ Route::middleware(['auth'])->group(function () {
 
     // Kecamatan Routes
     Route::resource('kecamatan', KecamatanController::class);
-    Route::post('kecamatan/{kecamatan}/desa', [DesaController::class, 'store'])->name('desa.store');
 
     // Desa Routes
     Route::resource('desa', DesaController::class);
+    Route::post('kecamatan/{kecamatan}/desa', [DesaController::class, 'store'])->name('desa.store');
     Route::post('desa/{desa}/create-user', [DesaController::class, 'createUserAccount'])->name('desa.create-user');
 
     // Rekap Data Routes

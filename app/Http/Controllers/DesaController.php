@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Desa;
-use App\Models\User;
 use App\Models\Kecamatan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,6 +27,12 @@ class DesaController extends Controller
         ]);
 
         $kecamatan = Kecamatan::findOrFail($kecamatan_id);
+
+        $existingDesa = $kecamatan->desas()->where('name', $request->name)->first();
+
+        if ($existingDesa) {
+            return redirect()->route('kecamatan.index')->with('error', 'Desa ini sudah ada');
+        }
 
         $kecamatan->desas()->create([
             'name' => $request->name,

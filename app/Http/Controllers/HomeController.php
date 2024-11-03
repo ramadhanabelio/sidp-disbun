@@ -6,7 +6,6 @@ use App\Models\Desa;
 use App\Models\Kabupaten;
 use App\Models\Kecamatan;
 use App\Models\PemilikKebun;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller

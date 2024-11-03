@@ -21,6 +21,12 @@
                             </div>
                         @endif
 
+                        @if (session('error'))
+                            <div class="alert alert-danger mt-4">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+
                         <!-- Modal Tambah Kecamatan -->
                         <div class="modal fade" id="tambahKecamatanModal" tabindex="-1"
                             aria-labelledby="tambahKecamatanModalLabel" aria-hidden="true">
@@ -90,6 +96,7 @@
                                             </td>
                                         </tr>
 
+                                        <!-- Modal Tambah Desa -->
                                         <!-- Modal Tambah Desa -->
                                         <div class="modal fade" id="tambahDesaModal-{{ $kecamatan->id }}" tabindex="-1"
                                             aria-labelledby="tambahDesaModalLabel" aria-hidden="true">
