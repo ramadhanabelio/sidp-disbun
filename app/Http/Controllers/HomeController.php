@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Desa;
 use App\Models\Kabupaten;
 use App\Models\Kecamatan;
+use App\Models\PemilikKebun;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,12 +16,14 @@ class HomeController extends Controller
         $totalKabupaten = Kabupaten::count();
         $totalKecamatan = Kecamatan::count();
         $totalDesa = Desa::count();
+        $totalPemilikKebun = PemilikKebun::count();
 
-        return view('home', compact('totalKabupaten', 'totalKecamatan', 'totalDesa'));
+        return view('home', compact('totalKabupaten', 'totalKecamatan', 'totalDesa', 'totalPemilikKebun'));
     }
 
     public function adminHome()
     {
-        return view('admin.home');
+        $totalPemilikKebun = PemilikKebun::count();
+        return view('admin.home', compact('totalPemilikKebun'));
     }
 }

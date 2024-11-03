@@ -1,26 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('admin.layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-</head>
+@section('title', 'Dashboard')
 
-<body>
-    <div class="container mt-5">
-        <h1>Welcome to the Admin Dashboard</h1>
-        <p>Nama Admin: {{ Auth::user()->name }}</p>
-        <p>This is the dashboard for admins.</p>
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
+@section('content')
+    <section class="section dashboard">
+        <div class="row">
 
-        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            Logout
-        </a>
-    </div>
-</body>
+            <div class="col-lg-12">
+                <div class="row">
 
-</html>
+                    <!-- Rakyat Card -->
+                    <div class="col-xxl-3 col-md-6">
+                        <div class="card info-card desa-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Rakyat</h5>
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-person-circle"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6>{{ $totalPemilikKebun }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Rakyat Card -->
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    {{-- <div class="card-body">
+                        <div class="container mt-4"> --}}
+                    {{-- <h1>Welcome to the Admin Dashboard</h1>
+                            <p>Nama Admin: {{ Auth::user()->name }}</p>
+                            <p>This is the dashboard for admins.</p> --}}
+                    {{-- </div>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection

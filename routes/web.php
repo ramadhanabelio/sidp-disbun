@@ -3,9 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DesaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KebunController;
 use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\PendataanController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\PemilikKebunController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +41,34 @@ Route::middleware(['auth'])->group(function () {
     // Desa Routes
     Route::resource('desa', DesaController::class);
     Route::post('desa/{desa}/create-user', [DesaController::class, 'createUserAccount'])->name('desa.create-user');
+
+    // Pendataan Routes
+    Route::get('/pendataan', [PendataanController::class, 'index'])->name('pendataan.index');
+    Route::post('/pendataan/store', [PendataanController::class, 'store'])->name('pendataan.store');
+    Route::post('/pendataan/storeKebun', [PendataanController::class, 'storeKebun'])->name('pendataan.storeKebun');
+    Route::post('/pendataan/storePendukung', [PendataanController::class, 'storePendukung'])->name('pendataan.storePendukung');
 });
+
+Route::prefix('pemilik_kebun')->name('pemilik_kebun.')->group(function () {
+    Route::get('/', [PemilikKebunController::class, 'index'])->name('index');
+    Route::get('/create', [PemilikKebunController::class, 'create'])->name('create');
+    Route::post('/store', [PemilikKebunController::class, 'store'])->name('store');
+    Route::get('/{id}', [PemilikKebunController::class, 'show'])->name('show');
+    Route::get('/{id}/edit', [PemilikKebunController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [PemilikKebunController::class, 'update'])->name('update');
+    Route::delete('/{id}', [PemilikKebunController::class, 'destroy'])->name('destroy');
+});
+
+Route::get('/pendataan', [PemilikKebunController::class, 'index'])->name('pendataan.index');
+
+Route::get('/kecamatan/{kabupatenId}', [PemilikKebunController::class, 'getKecamatan']);
+Route::get('/desa/{kecamatanId}', [PemilikKebunController::class, 'getDesa']);
+Route::get('/get-desas', [PendataanController::class, 'getDesas']);
+
+Route::post('/pendataan/storeKebun', [PendataanController::class, 'storeKebun'])->name('pendataan.storeKebun');
+Route::post('/pendataan/storePendukung', [PendataanController::class, 'storePendukung'])->name('pendataan.storePendukung');
+
+Route::post('/pemilik_kebun', [PemilikKebunController::class, 'store'])->name('pemilik_kebun.store');
+Route::post('/kebun/store', [KebunController::class, 'store'])->name('kebun.store');
+Route::get('/kebun/create', [KebunController::class, 'create'])->name('kebun.create');
+Route::resource('kebun', KebunController::class);

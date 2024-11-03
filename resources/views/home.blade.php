@@ -16,14 +16,13 @@
                                 <h5 class="card-title">Kabupaten</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-cart"></i>
+                                        <i class="bi bi-building"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{ $totalKabupaten }}</h6>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <!-- End Kabupaten Card -->
@@ -35,7 +34,7 @@
                                 <h5 class="card-title">Kecamatan</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-cart"></i>
+                                        <i class="bi bi-buildings"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{ $totalKecamatan }}</h6>
@@ -53,7 +52,7 @@
                                 <h5 class="card-title">Desa</h5>
                                 <div class="d-flex align-items-center">
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                        <i class="bi bi-currency-dollar"></i>
+                                        <i class="bi bi-bullseye"></i>
                                     </div>
                                     <div class="ps-3">
                                         <h6>{{ $totalDesa }}</h6>
@@ -74,7 +73,7 @@
                                         <i class="bi bi-file-pdf"></i>
                                     </div>
                                     <div class="ps-3">
-                                        <h6></h6>
+                                        <h6>{{ $totalPemilikKebun }}</h6>
                                     </div>
                                 </div>
                             </div>
