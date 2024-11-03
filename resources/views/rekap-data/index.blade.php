@@ -15,8 +15,8 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Pemilik</th>
-                                        <th>Luas Kebun</th>
-                                        <th>Lokasi</th>
+                                        <th>NIK</th>
+                                        <th>Alamat</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -25,12 +25,12 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}.</td>
                                             <td>{{ $pemilik->nama }}</td>
-                                            <td>{{ $pemilik->luas_kebun }}</td>
-                                            <td>{{ $pemilik->lokasi }}</td>
+                                            <td>{{ $pemilik->nomor_ktp }}</td>
+                                            <td>{{ $pemilik->alamat }}</td>
                                             <td>
                                                 <a href="{{ route('rekap-data.cetak', $pemilik->id) }}"
                                                     class="badge bg-success" target="_blank">
-                                                    <i class="bi bi-printer"></i> Print
+                                                    <i class="bi bi-printer"></i> Cetak
                                                 </a>
                                             </td>
                                         </tr>

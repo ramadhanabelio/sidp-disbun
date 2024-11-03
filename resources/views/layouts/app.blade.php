@@ -75,14 +75,16 @@
     <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('home') }}">
+                <a class="nav-link {{ request()->is('dashboard') || request()->is('dashboard/*') ? '' : 'collapsed' }}"
+                    href="{{ route('home') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('rekap-data.index') }}">
+                <a class="nav-link {{ request()->is('rekap-data') || request()->is('rekap-data/*') ? '' : 'collapsed' }}"
+                    href="{{ route('rekap-data') }}">
                     <i class="bi bi-book"></i>
                     <span>Rekap Data</span>
                 </a>
@@ -90,15 +92,20 @@
 
             <li class="nav-heading">Master Data</li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#master-data" data-bs-toggle="collapse" href="#">
+                <a class="nav-link {{ request()->is('master-data/*') ? '' : 'collapsed' }}"
+                    data-bs-target="#master-data" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-folder"></i><span>Master Data</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="master-data" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-                    <li><a href="{{ route('kabupaten.index') }}"><i class="bi bi-circle"></i><span>Kabupaten</span></a>
-                    </li>
-                    <li><a href="{{ route('kecamatan.index') }}"><i class="bi bi-circle"></i><span>Kecamatan</span></a>
-                    </li>
-                    <li><a href="{{ route('desa.index') }}"><i class="bi bi-circle"></i><span>Desa</span></a></li>
+                <ul id="master-data" class="nav-content collapse {{ request()->is('master-data/*') ? 'show' : '' }}"
+                    data-bs-parent="#sidebar-nav">
+                    <li><a class="{{ request()->is('kabupaten') ? 'active' : '' }}"
+                            href="{{ route('kabupaten.index') }}"><i
+                                class="bi bi-circle"></i><span>Kabupaten</span></a></li>
+                    <li><a class="{{ request()->is('kecamatan') ? 'active' : '' }}"
+                            href="{{ route('kecamatan.index') }}"><i
+                                class="bi bi-circle"></i><span>Kecamatan</span></a></li>
+                    <li><a class="{{ request()->is('desa') ? 'active' : '' }}" href="{{ route('desa.index') }}"><i
+                                class="bi bi-circle"></i><span>Desa</span></a></li>
                 </ul>
             </li>
         </ul>

@@ -44,15 +44,15 @@ Route::middleware(['auth'])->group(function () {
     Route::post('desa/{desa}/create-user', [DesaController::class, 'createUserAccount'])->name('desa.create-user');
 
     // Rekap Data Routes
-    Route::get('rekap-data', [RekapDataController::class, 'index'])->name('rekap-data.index');
+    Route::get('/rekap-data', [RekapDataController::class, 'index'])->name('rekap-data');
     Route::get('rekap-data/cetak/{id}', [RekapDataController::class, 'cetakPdf'])->name('rekap-data.cetak');
-
-    // Pendataan Routes
-    Route::get('/pendataan', [PendataanController::class, 'index'])->name('pendataan.index');
-    Route::post('/pendataan/store', [PendataanController::class, 'store'])->name('pendataan.store');
-    Route::post('/pendataan/storeKebun', [PendataanController::class, 'storeKebun'])->name('pendataan.storeKebun');
-    Route::post('/pendataan/storePendukung', [PendataanController::class, 'storePendukung'])->name('pendataan.storePendukung');
 });
+
+// Pendataan Routes
+Route::get('/pendataan', [PendataanController::class, 'index'])->name('pendataan.index');
+Route::post('/pendataan/store', [PendataanController::class, 'store'])->name('pendataan.store');
+Route::post('/pendataan/storeKebun', [PendataanController::class, 'storeKebun'])->name('pendataan.storeKebun');
+Route::post('/pendataan/storePendukung', [PendataanController::class, 'storePendukung'])->name('pendataan.storePendukung');
 
 Route::prefix('pemilik_kebun')->name('pemilik_kebun.')->group(function () {
     Route::get('/', [PemilikKebunController::class, 'index'])->name('index');
