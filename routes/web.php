@@ -7,6 +7,7 @@ use App\Http\Controllers\KebunController;
 use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\PendataanController;
+use App\Http\Controllers\RekapDataController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PemilikKebunController;
 
@@ -41,6 +42,10 @@ Route::middleware(['auth'])->group(function () {
     // Desa Routes
     Route::resource('desa', DesaController::class);
     Route::post('desa/{desa}/create-user', [DesaController::class, 'createUserAccount'])->name('desa.create-user');
+
+    // Rekap Data Routes
+    Route::get('rekap-data', [RekapDataController::class, 'index'])->name('rekap-data.index');
+    Route::get('rekap-data/cetak/{id}', [RekapDataController::class, 'cetakPdf'])->name('rekap-data.cetak');
 
     // Pendataan Routes
     Route::get('/pendataan', [PendataanController::class, 'index'])->name('pendataan.index');
