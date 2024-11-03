@@ -20,6 +20,6 @@ class RekapDataController extends Controller
         $pemilikKebun = PemilikKebun::findOrFail($id);
 
         $pdf = Pdf::loadView('rekap-data.cetak', compact('pemilikKebun'));
-        return $pdf->stream('Data_Pemilik_Kebun_' . $pemilikKebun->nama . '.pdf');
+        return $pdf->stream('Data Survey ' . $pemilikKebun->nama . '.pdf');
     }
 }

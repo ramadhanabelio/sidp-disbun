@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Pemilik Kebun</title>
+    <title>Data Survey Pemilik Kebun</title>
+    <link href="{{ public_path('assets/img/favicon.png') }}" rel="icon">
     <style>
         body {
             font-family: Arial, sans-serif;
