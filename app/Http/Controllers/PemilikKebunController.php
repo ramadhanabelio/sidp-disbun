@@ -52,6 +52,9 @@ class PemilikKebunController extends Controller
             $ijazah_tertinggi = $request->ijazah_tertinggi ?? $request->ijazah_lainnya;
             $pekerjaan = $request->pekerjaan ?? $request->pekerjaan_lainnya;
 
+            $kecamatan = Kecamatan::find($request->kecamatan);
+            $desa = Desa::find($request->desa_kelurahan);
+
             $pemilikKebun = PemilikKebun::create([
                 'nomor_urut' => $request->nomor_urut,
                 'nama' => $request->nama,
@@ -60,8 +63,8 @@ class PemilikKebunController extends Controller
                 'alamat' => $request->alamat,
                 'provinsi' => 'Riau',
                 'kabupaten_kota' => $request->kabupaten_kota ?? 'Bengkalis',
-                'kecamatan' => $request->kecamatan,
-                'desa_kelurahan' => $request->desa_kelurahan,
+                'kecamatan' => $kecamatan ? $kecamatan->name : null,
+                'desa_kelurahan' => $desa ? $desa->name : null,
                 'jenis_kelamin' => $request->jenis_kelamin,
                 'status_dalam_rumah_tangga' => $request->status_dalam_rumah_tangga,
                 'umur' => $request->umur,
