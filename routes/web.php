@@ -7,6 +7,7 @@ use App\Http\Controllers\KebunController;
 use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\PendataanController;
+use App\Http\Controllers\PendukungController;
 use App\Http\Controllers\RekapDataController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PemilikKebunController;
@@ -70,10 +71,6 @@ Route::get('/kecamatan/{kabupatenId}', [PemilikKebunController::class, 'getKecam
 Route::get('/desa/{kecamatanId}', [PemilikKebunController::class, 'getDesa']);
 Route::get('/get-desas', [PendataanController::class, 'getDesas']);
 
-Route::post('/pendataan/storeKebun', [PendataanController::class, 'storeKebun'])->name('pendataan.storeKebun');
-Route::post('/pendataan/storePendukung', [PendataanController::class, 'storePendukung'])->name('pendataan.storePendukung');
-
 Route::post('/pemilik_kebun', [PemilikKebunController::class, 'store'])->name('pemilik_kebun.store');
 Route::post('/kebun/store', [KebunController::class, 'store'])->name('kebun.store');
-Route::get('/kebun/create', [KebunController::class, 'create'])->name('kebun.create');
-Route::resource('kebun', KebunController::class);
+Route::post('/pendukung/store', [PendukungController::class, 'store'])->name('pendukung.store');

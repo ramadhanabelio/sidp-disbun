@@ -1,8 +1,19 @@
 {{-- Tab Keterangan Pendukung --}}
 <div class="tab-pane fade" id="bordered-justified-contact" role="tabpanel" aria-labelledby="pendukung-tab">
-    <form action="" class="row g-3" method="POST">
+    <form action="{{ route('pendukung.store') }}" class="row g-3" method="POST">
         @csrf
-        <input type="hidden" name="pemilik_id" value="{{ $pemilik->id ?? '' }}">
+        <input type="hidden" name="pemilik_kebun_id" value="{{ $pemilik->id ?? '' }}">
+
+        @if (session('success'))
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sukses',
+                    text: "{{ session('success') }}",
+                    confirmButtonText: 'OK'
+                });
+            </script>
+        @endif
 
         <h5>Biaya Produksi Perbulan</h5>
         <div class="col-md-6 mb-3">

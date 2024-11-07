@@ -74,7 +74,9 @@ class PemilikKebunController extends Controller
 
             session(['pemilik_kebun_id' => $pemilikKebun->id]);
 
-            return redirect()->route('kebun.create')->with('success', 'Data pemilik kebun berhasil disimpan! Silakan tambahkan data kebun.');
+            return redirect()->route('pendataan.index')
+                ->with('status', 'success')
+                ->with('success', 'Data pemilik kebun berhasil disimpan! Silakan tambahkan data kebun.');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Data gagal disimpan! Silahkan coba lagi.');
         }

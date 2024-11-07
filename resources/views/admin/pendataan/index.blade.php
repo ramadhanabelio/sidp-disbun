@@ -37,7 +37,7 @@
                             <!-- Bordered Tabs Justified -->
                             <ul class="nav nav-tabs nav-tabs-bordered d-flex mb-3" id="borderedTabJustified" role="tablist">
                                 <li class="nav-item flex-fill" role="presentation">
-                                    <button class="nav-link w-100 active" id="pemilik-kebun-tab" data-bs-toggle="tab"
+                                    <button class="nav-link w-100" id="pemilik-kebun-tab" data-bs-toggle="tab"
                                         data-bs-target="#bordered-justified-home" aria-controls="bordered-justified-home"
                                         aria-selected="true">Keterangan Pemilik Kebun</button>
                                 </li>
@@ -69,6 +69,22 @@
     </section>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            @if (session('status') === 'success')
+                var kebunTab = new bootstrap.Tab(document.getElementById('kebun-tab'));
+                kebunTab.show();
+            @endif
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('success'))
+                $('#pemilikKebunTab').removeClass('active');
+                $('#kebunTab').addClass('active');
+                $('#pemilikKebun').removeClass('show active');
+                $('#kebun').addClass('show active');
+            @endif
+        });
+
         function updateDesa() {
             const kecamatanId = document.getElementById('kecamatan').value;
             const desaSelect = document.getElementById('desa_kelurahan');

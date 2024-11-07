@@ -1,12 +1,20 @@
 {{-- Tab Keterangan Kebun --}}
 <div class="tab-pane fade" id="bordered-justified-profile" role="tabpanel" aria-labelledby="kebun-tab">
-    <form action="{{ route('kebun.store') }}"" class="row g-3" method="POST">
+    <form action="{{ route('kebun.store') }}" class="row g-3" method="POST">
         @csrf
-        <input type="hidden" name="pemilik_id" value="{{ $pemilik->id ?? '' }}">
+        <input type="hidden" name="pemilik_kebun_id" value="{{ $pemilik->id ?? '' }}">
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    {{ $error }}
+                @endforeach
+            </div>
+        @endif
 
         <div class="col-md-6 mb-3">
             <label for="status_kepemilikan_lahan" class="form-label">Status kepemilikan lahan</label>
-            <select class="form-select" id="pekerjaan" name="pekerjaan">
+            <select class="form-select" id="status_kepemilikan_lahan" name="status_kepemilikan_lahan">
                 <option value="">-- Pilih Status --</option>
                 <option value="Sertfikat Hak Milik">Sertfikat Hak Milik</option>
                 <option value="Girik/SKT/SKGR">Girik/SKT/SKGR</option>

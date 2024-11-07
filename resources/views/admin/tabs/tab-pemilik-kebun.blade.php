@@ -1,5 +1,5 @@
 {{-- Tab Keterangan Pemilik Kebun --}}
-<div class="tab-pane fade show active" id="bordered-justified-home" role="tabpanel" aria-labelledby="pemilik-kebun-tab">
+<div class="tab-pane fade show" id="bordered-justified-home" role="tabpanel" aria-labelledby="pemilik-kebun-tab">
     <form action="{{ route('pemilik_kebun.store') }}" class="row g-3" method="POST">
         @csrf
 
