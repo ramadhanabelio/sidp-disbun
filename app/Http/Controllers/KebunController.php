@@ -25,7 +25,7 @@ class KebunController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'pemilik_id' => 'required|exists:pemilik_kebuns,id',
+            'pemilik_kebun_id' => 'required|exists:pemilik_kebuns,id',
             'status_kepemilikan_lahan' => 'required|string',
             'alamat_kebun' => 'required|string',
             'nomor_dan_tanggal_surat' => 'required|numeric',

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pendukung;
 use Illuminate\Http\Request;
+use App\Models\Pendukung;
 
 class PendukungController extends Controller
 {
     public function store(Request $request)
     {
         $request->validate([
+            'pemilik_kebun_id' => 'required|exists:pemilik_kebuns,id',
             'pupuk_upah' => 'required|numeric',
             'pestisida_upah' => 'required|numeric',
             'pembersihan_upah' => 'required|numeric',
@@ -27,7 +28,7 @@ class PendukungController extends Controller
         ]);
 
         Pendukung::create([
-            'pemilik_id' => $request->pemilik_id,
+            'pemilik_kebun_id' => $request->pemilik_kebun_id,
             'pupuk_upah' => $request->pupuk_upah,
             'pestisida_upah' => $request->pestisida_upah,
             'pembersihan_upah' => $request->pembersihan_upah,
@@ -44,7 +45,6 @@ class PendukungController extends Controller
             'skema_peremajaan' => $request->skema_peremajaan,
         ]);
 
-        return redirect()->route('pendataan.index')
-            ->with('success', 'Sukses, data anda telah tersimpan!');
+        return redirect()->back()->with('success', 'Data pendukung berhasil disimpan!');
     }
 }
