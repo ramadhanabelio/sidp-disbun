@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-md-6 mb-3">
-            <label for="tempat" class="form-label">Tempat</label>
+            <label for="tempat" class="form-label">Tempat Lahir</label>
             <input type="text" class="form-control" id="tempat" name="tempat" required>
         </div>
 
