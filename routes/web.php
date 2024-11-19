@@ -11,6 +11,7 @@ use App\Http\Controllers\PendataanController;
 use App\Http\Controllers\PendukungController;
 use App\Http\Controllers\RekapDataController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\RekapSurveyController;
 use App\Http\Controllers\PemilikKebunController;
 
 /*
@@ -70,6 +71,11 @@ Route::prefix('pemilik_kebun')->name('pemilik_kebun.')->group(function () {
 });
 
 Route::get('/pendataan', [PemilikKebunController::class, 'index'])->name('pendataan.index');
+
+Route::get('/rekap-survey', [RekapSurveyController::class, 'index'])->name('rekap-survey.index');
+Route::get('rekap-survey/{id}/edit', [RekapSurveyController::class, 'edit'])->name('rekap-survey.edit');
+Route::put('rekap-survey/{id}', [RekapSurveyController::class, 'update'])->name('rekap-survey.update');
+Route::delete('rekap-survey/{id}', [RekapSurveyController::class, 'destroy'])->name('rekap-survey.destroy');
 
 Route::get('/kecamatan/{kabupatenId}', [PemilikKebunController::class, 'getKecamatan']);
 Route::get('/desa/{kecamatanId}', [PemilikKebunController::class, 'getDesa']);

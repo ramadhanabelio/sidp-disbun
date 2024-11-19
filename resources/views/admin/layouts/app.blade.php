@@ -89,6 +89,14 @@
                     <span>Pendataan</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link {{ request()->is('rekap-survey') ? '' : 'collapsed' }}"
+                    href="{{ route('rekap-survey.index') }}">
+                    <i class="bi bi-book"></i>
+                    <span>Rekap Survey</span>
+                </a>
+            </li>
         </ul>
     </aside>
 
