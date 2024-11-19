@@ -106,6 +106,9 @@
                                 class="bi bi-circle"></i><span>Kecamatan</span></a></li>
                     <li><a class="{{ request()->is('desa') ? 'active' : '' }}" href="{{ route('desa.index') }}"><i
                                 class="bi bi-circle"></i><span>Desa</span></a></li>
+                    <li><a class="{{ request()->is('akun-desa') ? 'active' : '' }}"
+                            href="{{ route('akun-desa.index') }}"><i class="bi bi-circle"></i><span>Akun
+                                Desa</span></a></li>
                 </ul>
             </li>
         </ul>

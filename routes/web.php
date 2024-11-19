@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DesaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KebunController;
+use App\Http\Controllers\AkunDesaController;
 use App\Http\Controllers\KabupatenController;
 use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\PendataanController;
@@ -43,6 +44,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('desa', DesaController::class);
     Route::post('kecamatan/{kecamatan}/desa', [DesaController::class, 'store'])->name('desa.store');
     Route::post('desa/{desa}/create-user', [DesaController::class, 'createUserAccount'])->name('desa.create-user');
+
+    // Akun Desa Routes
+    Route::get('/akun-desa', [AkunDesaController::class, 'index'])->name('akun-desa.index');
 
     // Rekap Data Routes
     Route::get('/rekap-data', [RekapDataController::class, 'index'])->name('rekap-data');
