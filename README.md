@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/assets/img/logo_disbun.png"  width=120  align="center">
+<img src="public/assets/img/logo_disbun.png"  width=240  align="center">
 
 ##
 
@@ -72,7 +72,7 @@ mv .env.example .env
 ren .env.example .env
 ```
 
-**6.** Create a database with a name according to your project, for example "sidp-disbun", and configure the .env file to set the database name:
+**6.** Create a database with a name according to your project, for example "sidp_disbun", and configure the .env file to set the database name:
 
 Open the .env file using a text editor and find the following line:
 
@@ -83,7 +83,7 @@ DB_DATABASE=laravel
 Replace database_name with the name you used for the database. For example:
 
 ```bash
-DB_DATABASE=sidp-disbun
+DB_DATABASE=sidp_disbun
 ```
 
 **7.** Generate application key:
