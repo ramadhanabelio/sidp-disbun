@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/assets/img/logo_disbun.png"  width=120 height=120  align="center">
+<img src="public/assets/img/logo_disbun.png"  width=120  align="center">
 
 ##
 
@@ -22,7 +22,7 @@ Interesting features of Sistem Informasi Data Perkebunan Rakyat:
 
 2. **CRUD Data**: Can add, view, change, search and delete data on procurement of equipment and goods and tools as well as record the IP list for each polyclinic available at Bengkalis Regional Hospital.
 
-3. **Print PDF**: Plantation Survey is a data collection method used to obtain information related to various aspects of the plantation sector.
+3. **Plantation Survey**: Plantation Survey is a data collection method used to obtain information related to various aspects of the plantation sector.
 
 ## 🛠️ Project Installation Guide
 
