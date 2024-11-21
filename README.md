@@ -20,7 +20,7 @@ Interesting features of Sistem Informasi Data Perkebunan Rakyat:
 
 1. **Authentication**: Admins can log in to the application via a registered account.
 
-2. **CRUD Data**: Can add, view, change, search and delete data on procurement of equipment and goods and tools as well as record the IP list for each polyclinic available at Bengkalis Regional Hospital.
+2. **CRUD Data**: Can add, view, change, search and delete data on districts, sub-districts, villages in Bengkalis Regency.
 
 3. **Plantation Survey**: Plantation Survey is a data collection method used to obtain information related to various aspects of the plantation sector.
 
