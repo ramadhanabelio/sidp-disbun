@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/assets/img/logo_disbun.png"  width=240  align="center">
+<img src="public/assets/img/logo_disbun.png"  width=280  align="center">
 
 ##
 
