@@ -69,7 +69,7 @@ mv .env.example .env
 **Windows:**
 
 ```bash
-ren .env.example .env
+cp .env.example .env
 ```
 
 **6.** Create a database with a name according to your project, for example "sidp_disbun", and configure the .env file to set the database name:
